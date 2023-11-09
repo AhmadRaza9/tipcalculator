@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+export default function App() {
+  return <TipCalculator />;
+}
 
-function App() {
+function TipCalculator() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-inner">
+      <BillInput />
+      <SelectPercentage />
+      <Output />
+      <Reset />
     </div>
   );
 }
 
-export default App;
+function BillInput() {
+  return (
+    <div>
+      <label for="bill">How much was the bill?</label>
+      <input type="text" placeholder="Bill Value" name="bill" />
+    </div>
+  );
+}
+
+function SelectPercentage() {
+  return (
+    <div>
+      <label for="bill">How much was the bill?</label>
+      <select>
+        <option value="0">Dissatisfied (0%)</option>
+        <option value="5">It was ok (5%)</option>
+        <option value="10">It was good (10%)</option>
+        <option value="20">Absolutely amazing! (20%)</option>
+      </select>
+    </div>
+  );
+}
+
+function Output() {}
+
+function Reset() {
+  return (
+    <div className="reset-container">
+      <button className="reset">Reset</button>
+    </div>
+  );
+}
